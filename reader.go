@@ -95,7 +95,7 @@ func (r *Resp) readArray() (Value, error) {
 	}
 
 	// For each line, parse and read the value
-	v.array = make([]Value, len)
+	v.array = make([]Value, 0, len)
 	for range len {
 		val, err := r.Read()
 		if err != nil {
